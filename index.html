@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Check Cookies</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <p>Nothing to show</p>
+        <script>
+            document.cookie = "s=1; SameSite=None; Secure";
+            const msg = /s=1/.test(document.cookie) ? "CookiesSupported" : "CookiesUnsupported";
+            window.parent.postMessage(msg, "*");
+        </script>
+    </body>
+</html>
